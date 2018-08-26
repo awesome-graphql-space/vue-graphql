@@ -88,17 +88,12 @@ export default {
       },
   }).then((res) => {
         // Update token and reset cache
-      console.log(res.data.signup.token);
-      console.log(res)
       localStorage.setItem(AUTH_TOKEN, res.data.signup.token);
-
       this.loading = false;
       this.error = false;
       this.errMsg = '';
-      console.log('hhh')
       this.$router.push({ name: 'tweet' });
   }).catch((error) => {
-      console.log(JSON.stringify(error))
       if (this.errMsg) this.error = error.graphQLErrors[0].message;
       this.loading = false;
       this.error = true;
