@@ -1,0 +1,14 @@
+query {
+      tweets {
+        id
+      text
+      upload
+      slug
+      views
+      author{
+        id
+        username
+        displayName
+      }
+      }
+    }
