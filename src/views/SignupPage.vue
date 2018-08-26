@@ -1,39 +1,37 @@
 <template>
-  <div class="hello">
     <div>
-              <Title>Signup on twister</Title>
-              <p v-if="error">{{errMsg}}</p>
-                <div>
-                  <Input
-                    placeholder="Display name"
-                    type="text"
-                    name="displayName"
-                    v-model="displayName"
-                  />
-                  <Input
-                    placeholder="Username"
-                    type="text"
-                    name="username"
-                    v-model="username"
-                  />
-                  <Input
-                    placeholder="Passowrd"
-                    type="password"
-                    name="password"
-                    v-model="password"
-                  />
-                  <Button :disabled="loading"
-                  @click="signup()"
-                  >
-                    Sign Up
-                  </Button>
-                </div>  
-                <div>
-                  <span>
-                    Dont have an account?{" "}
-                    <router-link to="/login">LOG IN</router-link>
-                  </span>
-                </div>
+          <Title>Signup on twister</Title>
+          <p v-if="error">{{errMsg}}</p>
+          <div>
+            <Input
+              placeholder="Display name"
+              type="text"
+              name="displayName"
+              v-model="displayName"
+            />
+            <Input
+              placeholder="Username"
+              type="text"
+              name="username"
+              v-model="username"
+            />
+            <Input
+              placeholder="Passowrd"
+              type="password"
+              name="password"
+              v-model="password"
+            />
+            <Button :disabled="loading"
+            @click="signup()"
+            >
+              Sign Up
+            </Button>
+          </div>  
+          <div>
+            <span>
+              Dont have an account?
+              <router-link to="/login">LOG IN</router-link>
+            </span>
           </div>
   </div>
 </template>
@@ -42,8 +40,9 @@
 
 // import { ApolloMutation } from 'vue-apollo';
 // import { onLogin } from '../vue-apollo';
-import { SIGNUP } from '../graphql/mutation';
+
 import { AUTH_TOKEN } from '../constants';
+import { SIGNUP } from '../graphql/mutation';
 import { Button, Title, Form, Input } from '../theme/styles';
 // import { AUTH_TOKEN } from '../constants';
 
@@ -75,7 +74,7 @@ export default {
     },
   },
   methods: {
-    signup() {
+    signup () {
       console.log(this.username);
       this.loading = true;
       this.$apollo.mutate({
