@@ -5,6 +5,16 @@ export const Header1 = styled.h1`
     font-family: 'Open Sans',-apple-system,'BlinkMacSystemFont','Arial',sans-serif;
 `;
 
+export const HeaderStyle = styled.div`
+  background-color: #009CFA;
+  height: 50px;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  
+  font-family: 'Open Sans',-apple-system,'BlinkMacSystemFont','Arial',sans-serif;
+`;
+
 export const Title = styled.h2`
   margin-top: 40px;
   margin-bottom: 70px;

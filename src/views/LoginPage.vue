@@ -13,7 +13,7 @@
             </Button>
           <div>
             <span>
-              Dont have an account?{" "}
+              Dont have an account?
               <router-link to="/signup" >SIGN UP</router-link>
             </span>
           </div>

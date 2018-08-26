@@ -2,15 +2,7 @@
   <div class="hello">
     <div>
               <Title>Signup on twister</Title>
-              <ApolloMutation
-                :mutation="require('@/graphql/signup.gql')"
-                :variables="{
-                    username,
-                    password,
-                    displayName,
-                }"
-                :done="onDone"
-                >
+              <p v-if="error">{{errMsg}}</p>
                 <div slot-scope="{ mutate, loading, gqlError: error }">
                     <div v-if="error" class="error">{{ error.message }}</div>
                 </div>
@@ -32,28 +24,27 @@
                   name="password"
                    v-model="password"
                 />
-                 <Button
-                    type="button"
-                    slot-scope="{ mutate, loading, error }"
-                    v-on:click="mutate()"
-                  >
-                    Sign up
-                  </Button>
+                 <Button :disabled="loading"
+                 @click="signup()"
+                 >
+                   Sign Up
+                 </Button>
                 <div>
                   <span>
                     Dont have an account?{" "}
                     <router-link to="/login">LOG IN</router-link>
                   </span>
                 </div>
-              </ApolloMutation>
             </div>
   </div>
 </template>
 
 <script>
 
-import { ApolloMutation } from 'vue-apollo';
-import { onLogin } from '../vue-apollo';
+// import { ApolloMutation } from 'vue-apollo';
+// import { onLogin } from '../vue-apollo';
+import { SIGNUP } from '../graphql/mutation';
+import { AUTH_TOKEN } from '../constants';
 import { Button, Title, Form, Input } from '../theme/styles';
 // import { AUTH_TOKEN } from '../constants';
 
@@ -67,7 +58,6 @@ export default {
     Title,
     Form,
     Input,
-    ApolloMutation,
   },
   data: () => ({
     displayName: '',
@@ -86,15 +76,30 @@ export default {
     },
   },
   methods: {
-    onDone(result) {
-      alert('alert');
-      console.log(result);
-      if (!result.data.userLogin) return;
-      const apolloClient = this.$apollo.provider.defaultClient;
-      // Update token and reset cache
-      const { token } = result.data.signup;
-      onLogin(apolloClient, token);
-    },
+    signup() {
+      this.$apollo.mutate({
+        // Mutation
+      mutation: SIGNUP,
+        // Parameters
+      variables: {
+        username: this.username,
+        displayName: this.displayName,
+        password: this.password,
+      },
+  }).then((res) => {
+        // Update token and reset cache
+      console.log(res.data.login.token);
+      localStorage.setItem(AUTH_TOKEN, res.data.login.token);
+
+      this.loading = false;
+      this.error = false;
+      this.errMsg = '';
+  }).catch((error) => {
+      if (this.errMsg) this.error = error.graphQLErrors[0].message;
+      this.loading = false;
+      this.error = true;
+  });
+},
     redirect() {
       this.$router.replace({ name: 'tweet' });
     },
