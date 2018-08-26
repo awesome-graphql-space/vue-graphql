@@ -75,6 +75,7 @@ export default {
         this.loading = false;
         this.error = false;
         this.errMsg = '';
+        this.$router.push({ name: 'tweet' });
       }).catch((error) => {
         if (this.errMsg) this.error = error.graphQLErrors[0].message;
         this.loading = false;

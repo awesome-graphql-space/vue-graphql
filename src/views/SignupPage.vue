@@ -77,6 +77,7 @@ export default {
   },
   methods: {
     signup() {
+      console.log('hello')
       this.$apollo.mutate({
         // Mutation
       mutation: SIGNUP,
@@ -95,6 +96,7 @@ export default {
       this.error = false;
       this.errMsg = '';
   }).catch((error) => {
+      console.log(JSON.stringify(mutationError))
       if (this.errMsg) this.error = error.graphQLErrors[0].message;
       this.loading = false;
       this.error = true;
