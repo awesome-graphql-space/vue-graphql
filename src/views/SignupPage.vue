@@ -3,39 +3,38 @@
     <div>
               <Title>Signup on twister</Title>
               <p v-if="error">{{errMsg}}</p>
-                <div slot-scope="{ mutate, loading, gqlError: error }">
-                    <div v-if="error" class="error">{{ error.message }}</div>
-                </div>
-                <Input
-                  placeholder="Display name"
-                  type="text"
-                  name="displayName"
-                   v-model="displayName"
-                />
-                <Input
-                  placeholder="Username"
-                  type="text"
-                  name="username"
-                   v-model="username"
-                />
-                <Input
-                  placeholder="Passowrd"
-                  type="password"
-                  name="password"
-                   v-model="password"
-                />
-                 <Button :disabled="loading"
-                 @click="signup()"
-                 >
-                   Sign Up
-                 </Button>
+                <div>
+                  <Input
+                    placeholder="Display name"
+                    type="text"
+                    name="displayName"
+                    v-model="displayName"
+                  />
+                  <Input
+                    placeholder="Username"
+                    type="text"
+                    name="username"
+                    v-model="username"
+                  />
+                  <Input
+                    placeholder="Passowrd"
+                    type="password"
+                    name="password"
+                    v-model="password"
+                  />
+                  <Button :disabled="loading"
+                  @click="signup()"
+                  >
+                    Sign Up
+                  </Button>
+                </div>  
                 <div>
                   <span>
                     Dont have an account?{" "}
                     <router-link to="/login">LOG IN</router-link>
                   </span>
                 </div>
-            </div>
+          </div>
   </div>
 </template>
 
@@ -77,7 +76,8 @@ export default {
   },
   methods: {
     signup() {
-      console.log('hello')
+      console.log(this.username);
+      this.loading = true;
       this.$apollo.mutate({
         // Mutation
       mutation: SIGNUP,
@@ -90,11 +90,14 @@ export default {
   }).then((res) => {
         // Update token and reset cache
       console.log(res.data.login.token);
+      console.log(res)
       localStorage.setItem(AUTH_TOKEN, res.data.login.token);
 
       this.loading = false;
       this.error = false;
       this.errMsg = '';
+      console.log('hhh')
+      this.$router.push({ name: 'tweet' });
   }).catch((error) => {
       console.log(JSON.stringify(mutationError))
       if (this.errMsg) this.error = error.graphQLErrors[0].message;

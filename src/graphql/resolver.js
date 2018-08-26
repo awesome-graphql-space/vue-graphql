@@ -1,4 +1,4 @@
-/*
+
 import gql from 'graphql-tag';
 
 export const resolvers = {
@@ -39,4 +39,4 @@ export const defaults =  {
     token: ''
   },
 }
-*/
+

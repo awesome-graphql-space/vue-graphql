@@ -1,9 +1,7 @@
-/*
+
 import gql from 'graphql-tag';
 
-/**
- * tweets timeline query
- *
+
 export const TWEETS = gql`
     query {
       tweets {
@@ -21,7 +19,6 @@ export const TWEETS = gql`
     }
 `;
 
-/** Local state query *
 export const GET_AUTH_STATUS = gql`
     query getAuthStatus($id: String!) {
       getAuthStatus(id: $id) @client{
@@ -33,7 +30,6 @@ export const GET_AUTH_STATUS = gql`
 `;
 
 
-/** Local state query *
 export const GET_LOGIN_STATUS = gql`
     query {
       getLoginStatus @client
