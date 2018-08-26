@@ -82,15 +82,15 @@ export default {
       mutation: SIGNUP,
         // Parameters
       variables: {
-        username: this.username,
         displayName: this.displayName,
+        username: this.username,
         password: this.password,
       },
   }).then((res) => {
         // Update token and reset cache
-      console.log(res.data.login.token);
+      console.log(res.data.signup.token);
       console.log(res)
-      localStorage.setItem(AUTH_TOKEN, res.data.login.token);
+      localStorage.setItem(AUTH_TOKEN, res.data.signup.token);
 
       this.loading = false;
       this.error = false;
@@ -98,7 +98,7 @@ export default {
       console.log('hhh')
       this.$router.push({ name: 'tweet' });
   }).catch((error) => {
-      console.log(JSON.stringify(mutationError))
+      console.log(JSON.stringify(error))
       if (this.errMsg) this.error = error.graphQLErrors[0].message;
       this.loading = false;
       this.error = true;
