@@ -1,28 +1,25 @@
 <template>
   <div class="tweet-box">
-    <div>
-          <Section id="twitter">
-            <div>
-              <TextArea
-                placeholder="Write something new ..."
-                v-bind:style="{ 'height': showButtons ? '100' : '10' }"
-                onChange=""
-                onFocus=""
-                v-model="title"
-              />
-                  <br/>
-                  <Flex>
-                    <span>Characters Left:</span>
-                    <Row>
-                    <Button
-                      :disabled="remainingChar() === 140 || remainingChar() < 0"
-                      v-on:click="">Tweet</Button>
-                    </Row>
-                  </Flex>
-            </div>
-          </Section>
-        )}
-       </div>
+      <Section id="twitter">
+        <div>
+          <TextArea
+            placeholder="Write something new ..."
+            v-bind:style="{ 'height': showButtons ? '100' : '10' }"
+            onChange=""
+            onFocus=""
+            v-model="title"
+          />
+              <br/>
+            <Flex>
+              <span>Characters Left:</span>
+              <Row>
+              <Button
+                :disabled="remainingChar() === 140 || remainingChar() < 0"
+                v-on:click="">Tweet</Button>
+              </Row>
+            </Flex>
+        </div>
+    </Section>
   </div>
 </template>
 
