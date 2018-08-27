@@ -10,7 +10,7 @@
               <span>Characters Left:</span>
               <Row>
               <Button
-                v-on:click="">Tweet</Button>
+                v-on:click="post">Tweet</Button>
               </Row>
             </Flex>
         </div>
