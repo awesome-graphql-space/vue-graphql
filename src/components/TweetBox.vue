@@ -29,14 +29,19 @@ import { POST } from '../graphql/mutation';
 
 export default {
   name: 'TweetBox',
+  components: {
+    Button,
+    Title,
+    TextArea,
+    Section,
+    Flex,
+  }, 
   props: {
     msg: String,
   },
   data: {
-    return {
-      id: "',
+      id: '',
       text: '',
-    }
   },
   methods:{
     post () {

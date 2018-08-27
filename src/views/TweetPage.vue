@@ -1,9 +1,10 @@
 <template>
+
   <ApolloQuery
     :query="require('../graphql/tweets.gql')"
   >
     <template slot-scope="{ result: { loading, error, data } }">
-
+      
       <!-- Loading -->
       <div v-if="loading" class="loading apollo">Loading...</div>
 
@@ -28,6 +29,7 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue';
+import TweetBox from '@/components/TweetBox.vue';
 import TweetItem from '@/components/TweetItem.vue';
 import { ApolloQuery } from 'vue-apollo';
 
@@ -35,7 +37,8 @@ import { ApolloQuery } from 'vue-apollo';
 export default {
   name: 'TweetPage',
   components: {
-    TweetItem
+    TweetItem,
+    TweetBox,
   } 
 };
 </script>
