@@ -15,7 +15,7 @@
         <TweetBox/>
         Username {{ data.hello }}
         <div v-for="t in data.tweets" :key="t.id">
-          <TweetItem>{{t.text}}</TweetItem>
+          <TweetItem>{{data}}</TweetItem>
         </div>
        </div>
 
