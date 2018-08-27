@@ -3,6 +3,7 @@
     :query="require('../graphql/tweets.gql')"
   >
     <template slot-scope="{ result: { loading, error, data } }">
+
       <!-- Loading -->
       <div v-if="loading" class="loading apollo">Loading...</div>
 
@@ -12,9 +13,9 @@
       <!-- Result -->
       <div v-else-if="data && !loading" class="result apollo">
         {{ data.hello }}
-        <ul v-for="t in data.tweets" :key="t.id">
-          <li><p>ghghghg</p></li>
-        </ul>
+        <div v-for="t in data.tweets" :key="t.id">
+          <TweetItem>ghghghg</TweetItem>
+        </div>
        </div>
 
       <!-- No result -->
@@ -27,6 +28,7 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue';
 import { ApolloQuery } from 'vue-apollo';
+import TweetItem from '@/components/TweetItem.vue'
 
 export default {
   name: 'TweetPage',
