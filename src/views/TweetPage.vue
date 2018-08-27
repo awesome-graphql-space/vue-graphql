@@ -12,7 +12,7 @@
 
       <!-- Result -->
       <div v-else-if="data && !loading" class="result apollo">
-        {{ data.HELLO91 }}
+        Username {{ data.hello }}
         <div v-for="t in data.tweets" :key="t.id">
           <TweetItem>{{t.text}}</TweetItem>
 
@@ -31,7 +31,11 @@
 import TweetItem from '@/components/TweetItem.vue';
 import { ApolloQuery } from 'vue-apollo';
 
+
 export default {
   name: 'TweetPage',
+  components: {
+    TweetItem
+  } 
 };
 </script>

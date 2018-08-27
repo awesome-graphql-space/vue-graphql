@@ -16,18 +16,20 @@
     </Card>
   </div>
 </template>
-
 <script>
 
 import { Text, Card, Row, Flex } from '../theme/styles';
 export default {
+  components: {
+    Text,
+    Card,
+    Row,
+    Flex,
+  },
   name: 'TweetItem',
   props: {
     msg: String,
-  },
-  data: {
-    
-  },
+  }
 };
 </script>
 
