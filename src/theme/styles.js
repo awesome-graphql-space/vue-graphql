@@ -51,7 +51,9 @@ export const Form = styled.form`
 `;
 
 export const Button = styled.button`
-  font-size: 14px;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
   background-color: #009cfa;
   color: white;
   border-radius: 5px;
@@ -59,6 +61,8 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
+  height: 30px;
+  padding: 0 10px;
   font-size: 14px;
   border: 1px solid #ddd;
   display: block;
