@@ -23,17 +23,17 @@
 </template>
 
 <script>
-import { Button, Title, TextArea, Section, Flex } from '../theme/styles';
+import { Button, TextArea, Section, Flex, Row } from '../theme/styles';
 import { POST } from '../graphql/mutation';
 
 export default {
   name: 'TweetBox',
   components: {
     Button,
-    Title,
     TextArea,
     Section,
     Flex,
+    Row,
   }, 
   props: {
     msg: String,
