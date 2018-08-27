@@ -3,7 +3,10 @@
       <Section id="twitter">
         <div>
           <TextArea
+            ref="tweets"
             placeholder="Write something new ..."
+            @focus="showButtons = true"
+            @blur="showButtons = false"
             v-model="title"/>
             <br/>
             <Flex>
@@ -35,7 +38,8 @@ export default {
     msg: String,
   },
   data: {
-    
+    query: '',
+    showButtons: false,
   },
   methods:{
     post () {
