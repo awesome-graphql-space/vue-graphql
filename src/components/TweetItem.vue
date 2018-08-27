@@ -18,11 +18,15 @@
 </template>
 
 <script>
+
 import { Text, Card, Row, Flex } from '../theme/styles';
 export default {
   name: 'TweetItem',
   props: {
     msg: String,
+  },
+  data: {
+    
   },
 };
 </script>
