@@ -1,10 +1,11 @@
 <template>
 
   <ApolloQuery
-    :query="require('../graphql/tweets.gql')"
-  >
+    :query="require('../graphql/tweets.gql')">
+    <template>
+      <TweetBox/>
+    </template>
     <template slot-scope="{ result: { loading, error, data } }">
-      
       <!-- Loading -->
       <div v-if="loading" class="loading apollo">Loading...</div>
 
@@ -39,6 +40,7 @@ export default {
   components: {
     TweetItem,
     TweetBox,
-  } 
+    ApolloQuery,
+  },
 };
 </script>

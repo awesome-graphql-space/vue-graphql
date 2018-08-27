@@ -4,12 +4,8 @@
         <div>
           <TextArea
             placeholder="Write something new ..."
-            v-bind:style="{ 'height': showButtons ? '100' : '10' }"
-            onChange=""
-            onFocus=""
-            v-model="title"
-          />
-              <br/>
+            v-model="title"/>
+            <br/>
             <Flex>
               <span>Characters Left:</span>
               <Row>
@@ -40,8 +36,7 @@ export default {
     msg: String,
   },
   data: {
-      id: '',
-      text: '',
+    
   },
   methods:{
     post () {
@@ -58,15 +53,15 @@ export default {
             // add new post from the mutation to existing posts
             data.tweets.push(post)
             // write data back to the cache
-            store.writeQuery({ query: require('../graphql/tweets.gql'), data })
-          }
+            store.writeQuery({ query: require('../graphql/tweets.gql'), data });
+          },
         })
-        .then(response => {
+        .then((response) => {
           // redirect to all posts
-          this.$router.push('/tweets')
-        })
-    }
-  }
+          this.$router.push('/tweets');
+        });
+    },
+  },
 };
 </script>
 
