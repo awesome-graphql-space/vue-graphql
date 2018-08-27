@@ -8,7 +8,7 @@
             v-bind:style="[showButtons ? { 'height':'100px' } : { 'height':'35px' }]"
             @focus="showButtons = true"
             @blur="showButtons = false"
-            v-model="title"/>
+            v-model="tweets"/>
             <br/>
             <Flex>
               <span>Characters Left:</span>
