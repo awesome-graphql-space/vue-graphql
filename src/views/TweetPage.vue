@@ -27,8 +27,8 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue';
-import { ApolloQuery } from 'vue-apollo';
 import TweetItem from '@/components/TweetItem.vue';
+import { ApolloQuery } from 'vue-apollo';
 
 export default {
   name: 'TweetPage',

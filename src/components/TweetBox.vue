@@ -25,6 +25,7 @@
 
 <script>
 import { Button, Title, TextArea, Section, Flex } from '../theme/styles';
+import { POST } from '../graphql/mutation';
 
 export default {
   name: 'TweetBox',
@@ -33,9 +34,34 @@ export default {
   },
   data: {
     return {
-      
+      id: "',
+      text: '',
     }
-  }  
+  },
+  methods:{
+    post () {
+      this.$apollo
+        .mutate({
+          mutation: POST,
+          variables: {
+            id: this.id,
+            text: this.text
+          },
+          update: (store, { data: { post } }) => {
+            // read data from cache for this query
+            const data = store.readQuery({ query: require('../graphql/tweets.gql') })
+            // add new post from the mutation to existing posts
+            data.tweets.push(post)
+            // write data back to the cache
+            store.writeQuery({ query: require('../graphql/tweets.gql'), data })
+          }
+        })
+        .then(response => {
+          // redirect to all posts
+          this.$router.push('/tweets')
+        })
+    }
+  }
 };
 </script>
 
