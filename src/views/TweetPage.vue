@@ -12,9 +12,10 @@
 
       <!-- Result -->
       <div v-else-if="data && !loading" class="result apollo">
-        {{ data.hello }}
+        {{ data.HELLO91 }}
         <div v-for="t in data.tweets" :key="t.id">
-          <TweetItem>ghghghg</TweetItem>
+          <TweetItem>{{t.text}}</TweetItem>
+
         </div>
        </div>
 
