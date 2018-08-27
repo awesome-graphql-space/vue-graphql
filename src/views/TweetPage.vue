@@ -28,7 +28,7 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue';
 import { ApolloQuery } from 'vue-apollo';
-import TweetItem from '@/components/TweetItem.vue'
+import TweetItem from '@/components/TweetItem.vue';
 
 export default {
   name: 'TweetPage',
