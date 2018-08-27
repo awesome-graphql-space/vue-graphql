@@ -5,6 +5,7 @@
           <TextArea
             ref="tweets"
             placeholder="Write something new ..."
+            v-bind:style="[true ? { 'height':'100' } : { 'height':'10' }]"
             @focus="showButtons = true"
             @blur="showButtons = false"
             v-model="title"/>
