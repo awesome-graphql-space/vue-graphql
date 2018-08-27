@@ -8,6 +8,7 @@
                 v-bind:style="{ 'height': showButtons ? '100' : '10' }"
                 onChange=""
                 onFocus=""
+                v-model="title"
               />
                   <br/>
                   <Flex>
@@ -26,13 +27,18 @@
 </template>
 
 <script>
-import { Button, Title, Form, Input } from '../theme/styles';
+import { Button, Title, TextArea, Section, Flex } from '../theme/styles';
 
 export default {
   name: 'TweetBox',
   props: {
     msg: String,
   },
+  data: {
+    return {
+      
+    }
+  }  
 };
 </script>
 

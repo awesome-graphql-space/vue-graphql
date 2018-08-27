@@ -1,10 +1,24 @@
 <template>
   <div class="tweet-item">
-
+      <Card>
+      <Flex>
+        <h5>Posted by hello</h5>
+      </Flex>
+      <Text>Some tweet</Text>
+      <Flex>
+        <Row>
+          <button>Like</button>
+          <button>Reply</button>
+          <button>comment</button>
+        </Row>
+        <button>Retwist</button>
+      </Flex>
+    </Card>
   </div>
 </template>
 
 <script>
+import { Text, Card, Row, Flex } from '../theme/styles';
 export default {
   name: 'TweetItem',
   props: {

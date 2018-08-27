@@ -5,6 +5,29 @@ export const Header1 = styled.h1`
     font-family: 'Open Sans',-apple-system,'BlinkMacSystemFont','Arial',sans-serif;
 `;
 
+export const Card = styled.section`
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  margin: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  border-bottom: 1px solid #e6ecf0;
+  cursor: pointer;
+  min-height: 51px;
+  padding: 9px 12px;
+  background-color: #fff;
+  &:hover {
+    background-color: #f5f8fa;
+  }
+`;
+
+export const Text = styled.p`
+  text-align: left;
+  padding: 5px;
+`;
+
 export const HeaderStyle = styled.div`
   background-color: #009CFA;
   height: 50px;
