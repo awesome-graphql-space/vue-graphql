@@ -10,7 +10,6 @@
               <span>Characters Left:</span>
               <Row>
               <Button
-                :disabled="remainingChar() === 140 || remainingChar() < 0"
                 v-on:click="">Tweet</Button>
               </Row>
             </Flex>
