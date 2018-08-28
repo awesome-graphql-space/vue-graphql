@@ -8,10 +8,12 @@
             :style="active ? { height: '100px' } : { height: '25px' }" 
             @focus.native="active = true"
             @blur.native="active = false"
-            v-model="value"/>
+            @input.native="updateValue"
+            :value="value"
+            v-model="tweets"/>
             <br/>
             <Flex>
-              <span>Characters Left:</span>
+              <span>Characters Left: {{ remainingCharacters }}</span>
               <Row>
               <Button
                 v-on:click="post">Tweet</Button>
@@ -36,16 +38,30 @@ export default {
     Row,
   }, 
   props: {
-    msg: String,
+    limit: {
+      type: Number,
+      default: 140,
+    },
+    value: {
+      type: String,
+    },
   },
   data() {
     return { 
       query: '',
       active: false,
-      value: 'something'
+      tweets: 'something'
+    }
+  },
+  computed:{
+    remainingCharacters() {
+      return this.limit - this.tweets.length;
     }
   },
   methods:{
+    updateValue(e) {
+      this.$emit(`input`, e.target.value);
+    },
     post () {
       this.$apollo
         .mutate({
