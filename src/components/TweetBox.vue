@@ -39,7 +39,11 @@ export default {
     msg: String,
   },
   data() {
-    return { active: false, value: 'something' }
+    return { 
+      query: '',
+      active: false,
+      value: 'something'
+    }
   },
   methods:{
     post () {
