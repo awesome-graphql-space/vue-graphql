@@ -5,10 +5,10 @@
           <TextArea
             ref="tweets"
             placeholder="Write something new ..."
-            v-bind:style="[showButtons ? { 'height':'100px' } : { 'height':'35px' }]"
-            @focus="showButtons = true"
-            @blur="showButtons = false"
-            v-model="tweets"/>
+            :style="active ? { height: '100px' } : { height: '25px' }" 
+            @focus.native="active = true"
+            @blur.native="active = false"
+            v-model="value"/>
             <br/>
             <Flex>
               <span>Characters Left:</span>
@@ -38,9 +38,8 @@ export default {
   props: {
     msg: String,
   },
-  data: {
-    query: '',
-    showButtons: false,
+  data() {
+    return { active: false, value: 'something' }
   },
   methods:{
     post () {
