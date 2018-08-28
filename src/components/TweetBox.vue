@@ -15,8 +15,7 @@
             <Flex>
               <span>Characters Left: {{ remainingCharacters }}</span>
               <Row>
-              <Button
-                v-on:click="post">Tweet</Button>
+                <Button v-if="active" v-on:click="post">Tweet</Button>
               </Row>
             </Flex>
         </div>
