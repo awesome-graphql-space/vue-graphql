@@ -49,7 +49,7 @@ export default {
     return { 
       query: '',
       active: false,
-      tweets: 'something'
+      tweets: ''
     }
   },
   computed:{
