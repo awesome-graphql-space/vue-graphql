@@ -4,7 +4,7 @@
       <Flex>
         <h5>Posted by hello</h5>
       </Flex>
-      </br>
+      <br>
       <Text>Some tweet</Text>
       <Flex>
         <Row>
