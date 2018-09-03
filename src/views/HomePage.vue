@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HeaderStyle> Twister<HeaderStyle/>
+    <HeaderStyle> Twister</HeaderStyle>
     <div>dddd </div>
   </div>
 </template>

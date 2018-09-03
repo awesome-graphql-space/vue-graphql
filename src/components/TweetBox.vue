@@ -15,7 +15,7 @@
             <Flex>
               <span>Characters Left: {{ remainingCharacters }}</span>
               <Row>
-                <Button v-if="active" v-on:click="post">Tweet</Button>
+                <Button v-on:click="post">Tweet</Button>
               </Row>
             </Flex>
         </div>
@@ -66,8 +66,8 @@ export default {
         .mutate({
           mutation: POST,
           variables: {
-            id: this.id,
-            text: this.text
+            // id: this.id,
+            text: this.tweets
           },
           update: (store, { data: { post } }) => {
             // read data from cache for this query
