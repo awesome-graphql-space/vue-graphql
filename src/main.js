@@ -32,7 +32,7 @@ const middlewareLink = setContext(() => {
   const token = localStorage.getItem(AUTH_TOKEN);
   return {
     headers: {
-      Authorization: `Bearer${token}`,
+      Authorization: `${token}`,
     },
   };
 });
