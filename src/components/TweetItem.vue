@@ -2,10 +2,10 @@
   <div class="tweet-item">
       <Card>
       <Flex>
-        <h5>Posted by: </h5>
+        <h5>Posted by: {{data.author.username}}</h5>
       </Flex>
       <br>
-      <Text>Some tweet</Text>
+      <TextPara>{{data.text}}</TextPara>
       <Flex>
         <Row>
           <button>Like</button>
@@ -18,24 +18,22 @@
   </div>
 </template>
 <script>
-import { Text, Card, Row, Flex } from '../theme/styles';
+import { TextPara, Card, Row, Flex } from '../theme/styles';
 
 export default {
   components: {
-    Text,
+    TextPara,
     Card,
     Row,
     Flex,
   },
   name: 'TweetItem',
   props: {
-    msg: String,
-    props: {
       data: {
         tweet: String,
         username: String
       },
-    },
+    
   },
 };
 </script>
