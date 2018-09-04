@@ -1,8 +1,8 @@
 import styled from 'vue-styled-components';
 
 export const Header1 = styled.h1`
-    margin: 50px;
-    font-family: 'Open Sans',-apple-system,'BlinkMacSystemFont','Arial',sans-serif;
+  margin: 50px;
+  font-family: 'Open Sans', -apple-system, 'BlinkMacSystemFont', 'Arial', sans-serif;
 `;
 
 export const Card = styled.section`
@@ -23,19 +23,19 @@ export const Card = styled.section`
   }
 `;
 
-export const Text = styled.p`
+export const TextPara = styled.p`
   text-align: left;
   padding: 5px;
 `;
 
 export const HeaderStyle = styled.div`
-  background-color: #009CFA;
+  background-color: #009cfa;
   height: 50px;
   padding: 20px;
   color: white;
   font-size: 24px;
-  
-  font-family: 'Open Sans',-apple-system,'BlinkMacSystemFont','Arial',sans-serif;
+
+  font-family: 'Open Sans', -apple-system, 'BlinkMacSystemFont', 'Arial', sans-serif;
 `;
 
 export const Title = styled.h2`
@@ -75,20 +75,20 @@ export const Input = styled.input`
 `;
 
 export const PrimaryButton = styled.button`
-	display: inline-block;
-	border: 1px solid #1da1f2;
-	color: #fff;
-	border-radius: 100px;
-	box-shadow: none;
-	cursor: pointer;
-	font-size: 14px;
-	font-weight: bold;
-	line-height: 20px;
-	padding: 6px 16px;
-	position: relative;
-	text-align: center;
-	white-space: nowrap;
-	background-color: #EC4972;
+  display: inline-block;
+  border: 1px solid #1da1f2;
+  color: #fff;
+  border-radius: 100px;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ec4972;
   border-color: transparent;
   margin: 12px;
   font-size: 14px;
@@ -106,20 +106,20 @@ export const Section = styled.section`
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-	background-color: #E81C4F;
-	background: rgba(232,28,79,0.1);
+  background-color: #e81c4f;
+  background: rgba(232, 28, 79, 0.1);
 `;
 
 export const Flex = styled.div`
   display: flex;
-	flex: grow;
-	justify-content: space-between;
+  flex: grow;
+  justify-content: space-between;
 `;
 
 export const Row = styled.div`
   display: flex;
-	justify-content: center;
-	direction: row;
+  justify-content: center;
+  direction: row;
 `;
 
 export const TextArea = styled.textarea`
@@ -131,7 +131,7 @@ export const TextArea = styled.textarea`
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-	border-radius: 4px;
-	border-color: #F5A4B8;
-	box-shadow: 0 0 0 1px #F5A4B8;
+  border-radius: 4px;
+  border-color: #f5a4b8;
+  box-shadow: 0 0 0 1px #f5a4b8;
 `;
