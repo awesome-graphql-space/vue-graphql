@@ -13,7 +13,7 @@ import './registerServiceWorker';
 Vue.config.productionTip = false;
 
 // initializing graphql http link
-const httpLink = new HttpLink({ uri: 'http://localhost:3111/graphql' });
+const httpLink = new HttpLink({ uri: 'http://localhost:3000/graphql' });
 /*
 const middlewareLink = setContext((_, { headers }) => {
   // get the authentication token from localstorage if it exists

@@ -1,8 +1,6 @@
 <template>
-  
   <ApolloQuery
     :query="require('../graphql/tweets.gql')">
-   
     <template slot-scope="{ result: { loading, error, data } }">
       <!-- Loading -->
       <div v-if="loading" class="loading apollo">Loading...</div>
@@ -13,9 +11,8 @@
       <!-- Result -->
       <div v-else-if="data && !loading" class="result apollo">
         <TweetBox/>
-        Username {{ data.hello }}
         <div v-for="t in data.tweets" :key="t.id">
-          <TweetItem>{{data}}</TweetItem>
+          <TweetItem :data="t"></TweetItem>
         </div>
        </div>
 
