@@ -2,7 +2,7 @@
   <div class="tweet-item">
       <Card>
       <Flex>
-        <h5>Posted by: {{data.tweet}}</h5>
+        <h5>Posted by: </h5>
       </Flex>
       <br>
       <Text>Some tweet</Text>
@@ -32,7 +32,8 @@ export default {
     msg: String,
     props: {
       data: {
-        
+        tweet: String,
+        username: String
       },
     },
   },
